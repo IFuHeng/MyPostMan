@@ -1,0 +1,39 @@
+<resources>
+    <!--XML的转义符
+        &lt; <
+        &gt; >
+        &amp; &
+        &apos; '
+        &quot; "
+        &nbsp; 空格
+        &#160; 空格
+    -->
+    <string name="app_name">CHPostMan</string>
+    <string name="action_settings">Settings</string>
+    <string name="previous">previous</string>
+    <string name="next">next</string>
+    <string name="warning">Warning</string>
+    <string name="hello_first_fragment">hello_first_fragment</string>
+    <string name="first_fragment_label">first_fragment_label</string>
+    <string name="second_fragment_label">second_fragment_label</string>
+
+    <string name="cancel">Cancel</string>
+    <string name="withdraw">Withdraw</string>
+    <string name="delete">Delete</string>
+    <string name="update">UPDATE</string>
+    <string name="confirm">Confirm</string>
+    <string name="save">Save</string>
+
+    <string name="english_only">You can only enter numbers or letters.</string>
+    <string name="notice_input_new_name">Please enter a new request name.</string>
+    <string name="menu">Menu</string>
+    <string name="part_params_title">Query Params</string>
+    <string name="part_header_title">Headers</string>
+    <string name="input_new_key_and_value">Please input new KEY and VALUE.</string>
+    <string name="ask_confirm_del">Delete the recode[%s], Are you sure.</string>
+    <string name="cookies">Cookies</string>
+    <string name="headers">Headers</string>
+    <string name="body">Body</string>
+    <string name="preview">Preview</string>
+
+</resources>

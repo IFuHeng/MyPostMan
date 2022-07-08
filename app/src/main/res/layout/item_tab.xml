@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/shape_bg_round_rect_blue"
+    android:gravity="center_vertical"
+    android:orientation="horizontal">
+
+    <com.changhong.chpostman.ui.view.ScrollForeverTextView
+        android:id="@android:id/text1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:ellipsize="marquee"
+        android:maxWidth="200dp"
+        android:minWidth="80dp"
+        android:text="324252sdvdaf435435"
+        android:textStyle="bold" />
+
+    <ImageView
+        android:id="@android:id/button1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:src="@android:drawable/ic_delete" />
+
+</LinearLayout>

@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@android:drawable/dialog_holo_light_frame"
+    android:gravity="center_horizontal"
+    android:paddingStart="20dp"
+    android:paddingTop="10dp"
+    android:paddingEnd="20dp"
+    android:paddingBottom="10dp">
+
+    <TextView
+        android:id="@android:id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="title"
+        android:textAppearance="?android:textAppearanceLarge"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@android:id/text1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/shape_bg_white_rect_red_stroke"
+        android:maxLength="100"
+        android:maxLines="1"
+        android:singleLine="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@android:id/summary"
+        app:layout_constraintTop_toBottomOf="@android:id/title" />
+
+    <TextView
+        android:id="@android:id/primary"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="key:"
+        android:textColor="@android:color/holo_blue_dark"
+        app:layout_constraintBottom_toBottomOf="@android:id/text1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@android:id/text1" />
+
+    <EditText
+        android:id="@android:id/text2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/shape_bg_white_rect_red_stroke"
+        android:imeOptions="actionDone"
+        android:maxLength="100"
+        android:maxLines="1"
+        android:singleLine="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@android:id/summary"
+        app:layout_constraintTop_toBottomOf="@android:id/text1" />
+
+    <TextView
+        android:id="@android:id/summary"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="value:"
+        android:textColor="@android:color/holo_orange_dark"
+        app:layout_constraintBottom_toBottomOf="@android:id/text2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@android:id/text2" />
+
+    <Button
+        android:id="@android:id/button1"
+        style="@style/Widget.AppCompat.Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/selector_bg_btn_default"
+        android:text="@string/cancel"
+        android:textColor="@color/textColorPrimary"
+        app:layout_constraintEnd_toStartOf="@android:id/button2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@android:id/text2" />
+
+    <Button
+        android:id="@android:id/button2"
+        style="@style/Widget.AppCompat.Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="@drawable/selector_bg_btn_default"
+        android:enabled="false"
+        android:gravity="center"
+        android:text="@string/confirm"
+        android:textColor="@color/textColorPrimary"
+        app:layout_constraintBottom_toBottomOf="@android:id/button1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@android:id/button1"
+        app:layout_constraintTop_toTopOf="@android:id/button1" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

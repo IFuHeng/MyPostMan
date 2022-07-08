@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<resources>
+    <string-array name="request_type">
+        <item>GET</item>
+        <item>POST</item>
+        <item>PUT</item>
+        <item>PATCH</item>
+        <item>DELETE</item>
+        <item>COPY</item>
+        <item>HEAD</item>
+        <item>OPTIONS</item>
+        <item>LINK</item>
+        <item>UNLINK</item>
+        <item>PURGE</item>
+        <item>LOCK</item>
+        <item>UNLOCK</item>
+        <item>PROPFIND</item>
+        <item>VIEW</item>
+    </string-array>
+    <string-array name="request_body_type">
+        <item>none</item>
+        <item>form-data</item>
+        <item>x-www-form-unlencoded</item>
+        <item>raw</item>
+        <item>binary</item>
+    </string-array>
+    <string-array name="raw_type">
+        <item>Text</item>
+        <item>JavaScript</item>
+        <item>JSON</item>
+        <item>HTML</item>
+        <item>XML</item>
+    </string-array>
+</resources>

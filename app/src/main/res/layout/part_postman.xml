@@ -1,0 +1,336 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:ignore="MissingDefaultResource">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            android:paddingTop="15dp"
+            app:layout_scrollFlags="scroll|enterAlways"
+            app:layout_scrollInterpolator="@android:interpolator/accelerate_decelerate"
+            app:popupTheme="@style/AppTheme.PopupOverlay" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nestedScrollView01"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/shape_bg_gradient"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp">
+
+            <com.changhong.chpostman.ui.view.ScrollForeverTextView
+                android:id="@+id/tvTitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_weight="1"
+                android:ellipsize="marquee"
+                android:hint="&lt;No Name&gt;"
+                android:singleLine="true"
+                android:text="name"
+                android:textAppearance="?android:textAppearanceLarge"
+                app:layout_constraintBottom_toBottomOf="@+id/btn_editName"
+                app:layout_constraintEnd_toStartOf="@+id/btn_editName"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/btn_editName" />
+
+            <ImageView
+                android:id="@+id/btn_editName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_toEndOf="@id/tvTitle"
+                android:layout_toRightOf="@id/tvTitle"
+                android:src="@android:drawable/ic_menu_edit"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <View
+                android:id="@+id/line1"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_marginTop="8dp"
+                android:background="#ff888888"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/btn_editName" />
+
+            <EditText
+                android:id="@+id/et_url"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="8dp"
+                android:imeOptions="actionSend"
+                android:maxLength="1000"
+                android:singleLine="true"
+                app:layout_constraintEnd_toStartOf="@+id/btn_send"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/line1" />
+
+            <ImageView
+                android:id="@+id/btn_send"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:src="@android:drawable/ic_menu_send"
+                app:layout_constraintBottom_toBottomOf="@+id/et_url"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/et_url" />
+
+            <Spinner
+                android:id="@+id/spinner_httpType"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="2dp"
+                android:layout_marginLeft="2dp"
+                android:layout_marginTop="2dp"
+                android:background="@drawable/shape_bg_spinner_left_round"
+                android:dropDownWidth="180dp"
+                android:entries="@array/request_type"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/et_url" />
+
+            <RadioGroup
+                android:id="@+id/radiGroupParam"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:layout_marginLeft="4dp"
+                android:layout_marginEnd="2dp"
+                android:layout_marginRight="2dp"
+                android:gravity="bottom"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toBottomOf="@+id/spinner_httpType"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/spinner_httpType">
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/selector_bg_radio_underline_orange"
+                    android:button="@null"
+                    android:gravity="center"
+                    android:text="Params" />
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/selector_bg_radio_underline_orange"
+                    android:button="@null"
+                    android:gravity="center"
+                    android:text="Headers" />
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/selector_bg_radio_underline_orange"
+                    android:button="@null"
+                    android:gravity="center"
+                    android:text="Body" />
+
+            </RadioGroup>
+
+            <View
+                android:id="@+id/line2"
+                android:layout_width="wrap_content"
+                android:layout_height="1dp"
+                android:background="#ff888888"
+                app:layout_constraintEnd_toEndOf="@id/radiGroupParam"
+                app:layout_constraintStart_toStartOf="@id/radiGroupParam"
+                app:layout_constraintTop_toBottomOf="@id/radiGroupParam" />
+
+            <ViewFlipper
+                android:id="@+id/viewFlipper01"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:minHeight="200dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/line2">
+
+                <FrameLayout
+                    android:id="@+id/container1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <FrameLayout
+                    android:id="@+id/container2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <FrameLayout
+                    android:id="@+id/container3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+            </ViewFlipper>
+
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:background="#ff888888"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/viewFlipper01" />
+
+            <TextView
+                android:id="@+id/textView_response"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginRight="8dp"
+                android:text="Response"
+                android:textAppearance="?android:textAppearanceLarge"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/viewFlipper01" />
+
+            <TextView
+                android:id="@+id/tv_response_status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:layout_marginEnd="4dp"
+                android:gravity="center"
+                android:textSize="10sp"
+                app:layout_constraintBottom_toBottomOf="@+id/textView_response"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/textView_response" />
+
+            <RadioGroup
+                android:id="@+id/radiGroupResponse"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="2dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="2dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textView_response">
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/selector_bg_radio_underline_orange"
+                    android:button="@null"
+                    android:gravity="center"
+                    android:text="@string/body" />
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/selector_bg_radio_underline_orange"
+                    android:button="@null"
+                    android:gravity="center"
+                    android:text="@string/cookies" />
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/selector_bg_radio_underline_orange"
+                    android:button="@null"
+                    android:gravity="center"
+                    android:text="@string/headers" />
+
+                <RadioButton
+                    android:id="@+id/rb_preview"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/selector_bg_radio_underline_orange"
+                    android:button="@null"
+                    android:gravity="center"
+                    android:text="@string/preview"
+                    android:visibility="gone" />
+
+            </RadioGroup>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#ff888888"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/radiGroupResponse" />
+
+            <ViewFlipper
+                android:id="@+id/viewFlipper02"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:minHeight="200dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/radiGroupResponse">
+
+                <TextView
+                    android:id="@+id/container4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="3dp"
+                    android:background="@drawable/shape_bg_round_rect_blue"
+                    android:paddingEnd="10dp"
+                    android:textSize="12sp" />
+
+                <ListView
+                    android:id="@+id/container5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="3dp"
+                    android:background="@drawable/shape_bg_round_rect_blue" />
+
+                <ListView
+                    android:id="@+id/container6"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="3dp"
+                    android:background="@drawable/shape_bg_round_rect_blue" />
+
+                <WebView
+                    android:id="@+id/webView01"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    tools:ignore="WebViewLayout" />
+            </ViewFlipper>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.slidingpanelayout.widget.SlidingPaneLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/slidingPaneLayout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <include layout="@layout/part_sliding_menu" />
+
+    <include layout="@layout/part_postman" />
+
+</androidx.slidingpanelayout.widget.SlidingPaneLayout>
